@@ -1,0 +1,12 @@
+.btn{
+  margin-left: 9px;
+}
+
+*{
+  text-align:center;
+
+}
+
+.form-control.ng-touched.ng-invalid{
+  border: 1px solid red;
+}

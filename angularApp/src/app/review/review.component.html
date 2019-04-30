@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<a [routerLink]="['/']">Home</a>
+<h1 > Detaills about {{pet.name}}</h1>
+
+<h5>Pet type:{{pet.type}}</h5>
+<h5>Description:{{pet.description}}</h5>
+<h5>Skills: {{pet.skill_one}} <br>{{pet.skill_two}} <br>{{pet.skill_three}}  </h5>
+<h5>Likes:{{pet.like}}</h5>
+<button class="btn btn-primary" [disabled]="!itara" (click)="Likes()">Like this pet</button>
+<button class='btn btn-danger' (click)='Deletepet(pet._id)'>Adopt this pet</button>
+

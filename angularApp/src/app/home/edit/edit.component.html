@@ -1,0 +1,41 @@
+<div class="container">
+  <div style="color:brown">{{errors}}</div>
+  <form >
+      <div class="form-group">
+        <label>Pet Name:
+          <input required minlength="3" class="form-control" type="text" name="name" [(ngModel)]="pet.name"  #name="ngModel"/>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="alert alert-danger"> name is required
+            </div>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label> Pet type:<input required minlength="3" class="form-control" type="text" name="type" [(ngModel)]="pet.type"   #type="ngModel"  />
+            <div *ngIf="(type.invalid && type.dirty || type.touched)"
+              class="alert alert-danger"> type is required
+            </div>
+        </label>
+      </div>
+
+
+      <div class="form-group">
+          <label> Description:<input required minlength="3" class="form-control" type="text" name="description" [(ngModel)]="pet.description" #description="ngModel" />
+              <div *ngIf="description.invalid && (description.dirty || description.touched)"
+            class="alert alert-danger"> description is required
+            </div>
+          </label>
+      </div>
+      <div class="form-group">
+        <label> Skills:
+            <p> Skill 1:<input class="form-control" type="text" name="skill_one" [(ngModel)]="pet.skill_one" /></p>
+            <p> Skill 2:<input class="form-control" type="text" name="skill_two" [(ngModel)]="pet.skill_two" /></p>
+            <p> Skill 3:<input class="form-control" type="text" name="skill_three" [(ngModel)]="pet.skill_three" /></p>
+        </label>
+    </div>
+      <button class="btn btn-primary" [disabled]="pet.name == ''"  (click)="Editpet()">Edit</button>
+      <button class="btn btn-danger" [routerLink]="['/']">Cancel</button>
+      <button (click)="refresh()" class=" btn btn-success"  >Reset</button>
+  </form>
+</div>
+

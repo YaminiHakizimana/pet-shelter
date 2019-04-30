@@ -1,0 +1,26 @@
+<div class="container ">
+  <h2>{{title}}</h2>
+  <div class="row">
+    <button class="btn btn-warning" [routerLink]="['/addpet']">Add a pet to the shelter</button>
+    <div class="col-md-12 ">
+      <table class="table table-dark  table-hover">
+        <tr>
+          <th>Name</th>
+          <th>type</th>
+          <th>Action </th>
+        </tr>
+        <tr *ngFor='let i of pets'>
+          <td>{{ i.name }}</td>
+          <td>{{i.type}}</td>
+          <td>
+            <div id="dt">
+            <button class='btn btn-success' [routerLink]="['/pets/' + i._id]">Details</button>
+            <button class='btn btn-info' [disabled]="!itara" [routerLink]="['/pet/edit/' + i._id]">Update</button>
+          </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
